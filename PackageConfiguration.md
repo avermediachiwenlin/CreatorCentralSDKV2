@@ -10,7 +10,7 @@ Here is an example of PackageConfig.json file. Developers should modify the fiel
 {
     "Widgets": [
         {
-            "Name": "AX Lighting Toggle",
+            "Name": "App/File",
             "Icon": "widgetIcon",
             "States": [
                 {
@@ -30,16 +30,16 @@ Here is an example of PackageConfig.json file. Developers should modify the fiel
                     "height": 1
                 }
             ],
-            "Tooltip": "This widget can toggle the lighting state of AX devices.", 
-            "Category": "com.avermedia.axlighting.toggle",
-            "PropertyViewPath": "property/lightingToggle.html"
+            "Tooltip": "This widget can open the file or app by user selected.", 
+            "Category": "com.avermedia.system.openapp",
+            "PropertyViewPath": "property/index.html"
         }
     ], 
     
     "Author": "AVerMedia", 
-    "Description": "", 
-    "Name": "AX Lighting", 
-    "Category": "com.avermedia.axlighting",
+    "Description": "This package contains many utilities that can improve work efficiency.", 
+    "Name": "System", 
+    "Category": "com.avermedia.system",
     "Icon": "images/packageIcon", 
     "URL": "https://www.avermedia.com/gaming/creatorcentral", 
     "Version": "1.0.0",
