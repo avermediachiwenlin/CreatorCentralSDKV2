@@ -150,7 +150,6 @@ The payload object contains the following members:
 ## widgetWillAppear
 
 The package will receive this event when:
-- the Creator Central application did launched.
 - the user switches profiles.
 - the user drag a widget from Widget List to Panel.
 
@@ -244,13 +243,13 @@ var json = {
 | event | propertyViewDidDisappear |
 | context | The unique identifier used to identify the instance's widget. |
 
-## sendToPackage
-The package will receive a **sendToPackage** event when the property view sends a **sendToPackage** event:
+## sendToWidget
+The package will receive a **sendToWidget** event when the property view sends a **sendToWidget** event:
 
 ``` json
 var json = {
     "action": "com.avermedia.example.widget1",
-    "event": "sendToPackage", 
+    "event": "sendToWidget", 
     "context": uniqueIdentifier,
     "payload": {<json data>}
   }
@@ -260,7 +259,7 @@ var json = {
 | Members | Description |
 | -------- | -------- |
 | widget | The widget's category. |
-| event | sendToPackage |
+| event | sendToWidget |
 | context | The unique identifier used to identify the instance's widget. |
 | payload | A json data |
 
