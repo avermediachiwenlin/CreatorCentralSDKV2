@@ -33,7 +33,7 @@ The Property View will receive these events.
 
 ``` json
 var json = {
-    "widget": "com.avermedia.widget1", 
+    "widget": "com.avermedia.example.widget1", 
     "event": "didReceiveWidgetSettings", 
     "context": uniqueIdentifier, 
     "payload": {<json data>}

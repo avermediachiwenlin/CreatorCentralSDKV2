@@ -26,13 +26,13 @@ The following events is additional to property view:
 | -------- | -------- |
 | sendToPackage | Send a payload to the package. |
 
-## saveWidgetSettings
+## setWidgetSettings
 
 The package and property view can save data persistently for the widget's instance using the setWidgetSettings event. Note that the property view will automatically receive a **didReceiveWidgetSettings** event with the new settings. Similarly, the package will automatically receive a **didReceiveWidgetSettings** event with the new settings when the property view sends this event.
 
 ``` json
 var json = {
-    "event": "saveWidgetSettings",
+    "event": "setWidgetSettings",
     "context": uniqueValue,
     "payload": {<json data>}
 };
@@ -40,24 +40,24 @@ var json = {
 
 | Members | Description |
 | -------- | -------- |
-| event | saveWidgetSettings. |
+| event | setWidgetSettings. |
 | context | A value to identify the instance's widget or Property View. This value is received by the Property View as a parameter of the connectCreatorCentral function. |
 | payload | A JSON object which is persistently saved for the widget's instance. |
 
-## requestWidgetSettings
+## getWidgetSettings
 
-The package and property view can request the persistent data stored for the widget's instance using the **requestWidgetSettings** event.
+The package and property view can request the persistent data stored for the widget's instance using the **getWidgetSettings** event.
 
 ``` json
 var json = {
-    "event": "requestWidgetSettings",
+    "event": "getWidgetSettings",
     "context": uniqueIdentifier
 };
 ```
 
 | Members | Description |
 | -------- | -------- |
-| event | requestWidgetSettings. |
+| event | getWidgetSettings. |
 | context | A value to identify the instance's widget or Property View. This value is received by the Property View as a parameter of the connectCreatorCentral function. |
 
 The package or property view will receive a **didReceiveWidgetSettings** containing the settings for this widget:
@@ -94,24 +94,24 @@ var json = {
 
 | Members | Description |
 | -------- | -------- |
-| event | requestWidgetSettings. |
+| event | setPackageSettings. |
 | context | A value to identify the package or Property View. This value is received by the Property View as a parameter of the connectCreatorCentral function. |
 | payload | A json object which is persistently saved and available to every widget in the package. |
 
-## requestPackageSettings
+## getPackageSettings
 
 The package and Property View can request the persistent data which available to every widget in the package using the **requestPackageSettings** event:
 
 ``` json
 var json = {
-    "event": "requestPackageSettings",
+    "event": "getPackageSettings",
     "context": uniqueIdentifier
 };
 ```
 
 | Members | Description |
 | -------- | -------- |
-| event | requestPackageSettings |
+| event | getPackageSettings |
 | context | A value to identify the package or Property View. This value is received by the Property View as a parameter of the connectCreatorCentral function. |
 
 The package or Property View will receive event **didReceivePackageSettings** containing the global settings:
