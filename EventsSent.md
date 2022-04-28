@@ -28,7 +28,7 @@ The following events is additional to property view:
 
 ## setWidgetSettings
 
-The package and property view can save data persistently for the widget's instance using the setWidgetSettings event. Note that the property view will automatically receive a **didReceiveWidgetSettings** event with the new settings. Similarly, the package will automatically receive a **didReceiveWidgetSettings** event with the new settings when the property view sends this event.
+The package and property view can save data persistently for the widget's instance using the setWidgetSettings event. Note that the property view will automatically receive a ```didReceiveWidgetSettings``` event with the new settings. Similarly, the package will automatically receive a ```didReceiveWidgetSettings``` event with the new settings when the property view sends this event.
 
 ``` json
 var json = {
@@ -46,7 +46,7 @@ var json = {
 
 ## getWidgetSettings
 
-The package and property view can request the persistent data stored for the widget's instance using the **getWidgetSettings** event.
+The package and property view can request the persistent data stored for the widget's instance using the ```getWidgetSettings``` event.
 
 ``` json
 var json = {
@@ -60,7 +60,7 @@ var json = {
 | event | getWidgetSettings. |
 | context | A value to identify the instance's widget or Property View. This value is received by the Property View as a parameter of the connectCreatorCentral function. |
 
-The package or property view will receive a **didReceiveWidgetSettings** containing the settings for this widget:
+The package or property view will receive an event ```didReceiveWidgetSettings``` containing the settings for this widget:
 ``` json
 var json = {
     "widget": "com.avermedia.example.widget1",
@@ -71,11 +71,6 @@ var json = {
     }
 };
 ```
-
-| Members | Description |
-| -------- | -------- |
-| event | requestWidgetSettings. |
-| context | A value to identify the instance's widget or Property View. This value is received by the Property View as a parameter of the connectCreatorCentral function. |
 
 
 ## setPackageSettings
@@ -98,6 +93,8 @@ var json = {
 | context | A value to identify the package or Property View. This value is received by the Property View as a parameter of the connectCreatorCentral function. |
 | payload | A json object which is persistently saved and available to every widget in the package. |
 
+Please keep in your mind: when the package uses this API, the Property View will automatically receive a ```didReceivePackageSettings``` callback with the new settings. Similarly, when the Property View uses this API, the package will automatically receive a ```didReceivePackageSettings``` callback with the new settings.
+
 ## getPackageSettings
 
 The package and Property View can request the persistent data which available to every widget in the package using the **requestPackageSettings** event:
@@ -114,7 +111,7 @@ var json = {
 | event | getPackageSettings |
 | context | A value to identify the package or Property View. This value is received by the Property View as a parameter of the connectCreatorCentral function. |
 
-The package or Property View will receive event **didReceivePackageSettings** containing the global settings:
+The package or Property View will receive an event ```didReceivePackageSettings``` containing the global settings:
 
 ``` json
 var json = {
@@ -231,7 +228,7 @@ The payload object contains the following members:
 
 ## sendToPackage
 
-The property view can send a payload to the package using the **sendToPackage** event:
+The property view can send a payload to the package using the ```sendToPackage``` event:
 ``` json
 var json = {
     "widget": "com.avermedia.example.widget1",
@@ -248,7 +245,7 @@ var json = {
 | context | A value to identify the widget instance. |
 | payload | A json object |
 
-The package will receive event **sendToPackage** containing the payload:
+The package will receive event ```sendToPackage``` containing the payload:
 ``` json
 var json = {
     "widget": "com.avermedia.example.widget1",
@@ -260,7 +257,7 @@ var json = {
 
 ## sendToPropertyView
 
-The package can send a payload to the Property View using the **sendToPropertyView** event:
+The package can send a payload to the Property View using the ```sendToPropertyView``` event:
 ``` json
 var json = {
     "widget": "com.avermedia.example.widget1",
@@ -277,7 +274,7 @@ var json = {
 | context | A value to identify the widget instance. |
 | payload | A json object |
 
-The property view will receive event **sendToPropertyView** containing the payload:
+The property view will receive event ```sendToPropertyView``` containing the payload:
 ``` json
 var json = {
     "widget": "com.avermedia.example.widget1",

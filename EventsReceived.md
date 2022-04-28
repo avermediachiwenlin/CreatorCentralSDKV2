@@ -243,13 +243,13 @@ var json = {
 | event | propertyViewDidDisappear |
 | context | The unique identifier used to identify the instance's widget. |
 
-## sendToWidget
-The package will receive a **sendToWidget** event when the property view sends a **sendToWidget** event:
+## sendToPackage
+The package will receive a ```sendToPackage``` event when the property view sends a ```sendToPackage``` event:
 
 ``` json
 var json = {
     "action": "com.avermedia.example.widget1",
-    "event": "sendToWidget", 
+    "event": "sendToPackage", 
     "context": uniqueIdentifier,
     "payload": {<json data>}
   }
@@ -259,9 +259,11 @@ var json = {
 | Members | Description |
 | -------- | -------- |
 | widget | The widget's category. |
-| event | sendToWidget |
+| event | sendToPackage |
 | context | The unique identifier used to identify the instance's widget. |
 | payload | A json data |
+
+When the package received this event, it will change the properties or data of a specific widget based on the JSON object.
 
 ## sendToPropertyView
 The property view will receive a **sendToPropertyView** event when the package sends a **sendToPropertyView** event:
