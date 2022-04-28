@@ -73,7 +73,7 @@ The ```info``` json is described in the section [Info parameter](#infoparameter)
 These parameters contain the port and unique identifier to use for communication with the Creator Central application. Your Javascript function would be as below:
 
 ``` js
-function connectCreatorCentral(inPort, inPropertyViewUUID, inInfo, inActionInfo)
+function connectCreatorCentral(inPort, inPropertyViewUUID, inRegisterEvent, inInfo, inWidgetInfo)
 ```
 
 | Members | Description | 
@@ -88,7 +88,7 @@ This function is called when property view is displayed and should:
 
 - create the WebSocket with the port passed in parameter:
 ``` js
-Websocket = new WebSocket("ws://localhost:" + inPort);
+websocket = new WebSocket("ws://localhost:" + inPort);
 ```
 
 - When the WebSocket is open, the Property View needs to be registered:
@@ -106,7 +106,7 @@ websokcet.onopen = function()
 
 - After performing these two steps, the Property View should receive the events through the function:
 ``` js
-Websocket.onmessage = function(evt)
+websocket.onmessage = function(evt)
 ```
 
 The ```inInfo``` parameter is described in the section [Info parameter](#infoparameter).
@@ -156,6 +156,6 @@ var json = {
 
 The payload contains:
 
-| Members | Description | 
+| Payload | Description | 
 | - | - |
 | settings | This json contains data that you can set and are stored persistently. |
