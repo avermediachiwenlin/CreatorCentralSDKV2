@@ -31,7 +31,7 @@ Here is an example of PackageConfig.json file. Developers should modify the fiel
                 }
             ],
             "Tooltip": "This widget can open the file or app by user selected.", 
-            "Category": "com.avermedia.system.openapp",
+            "UUID": "com.avermedia.system.openapp",
             "PropertyViewPath": "property/index.html"
         }
     ], 
@@ -39,7 +39,7 @@ Here is an example of PackageConfig.json file. Developers should modify the fiel
     "Author": "AVerMedia", 
     "Description": "This package contains many utilities that can improve work efficiency.", 
     "Name": "System", 
-    "Category": "com.avermedia.system",
+    "UUID": "com.avermedia.system",
     "Icon": "images/packageIcon", 
     "URL": "https://www.avermedia.com/gaming/creatorcentral", 
     "Version": "1.0.0",
@@ -73,11 +73,12 @@ Here is an example of PackageConfig.json file. Developers should modify the fiel
 | Author         | Required | The author of the Package. This string will be displayed to the user in Creator Central Widget Store.|
 | Description    | Required | Provides a general description of what the package does. This string will be displayed to the user in Creator Central Widget Store.|
 | Name           | Required | The name of the package. This string will be displayed to the user in the Widget List and Creator Central Widget Store both.|
-| Icon           | Required | The relative path to a PNG image. This image will be displayed to the user in the Widget List and Creator Central Widget Store both.|
-| URL            | Optional | A site to provide more information about the package.|
-| Version        | Required | Package's semantic version (1.0.0)|
-| Runtime        | Required | The relative path to the HTML/binary file containing the package code.|
-| CreatorCentral | Required | Minimal supported Creator Central App version and SDK version  of this Package|
+| UUID | Required | This is a unique identifier used to identify the package. The unique identifier must be contained only lowercase alphanumeric characters(a-z, 0-9), hyphen(-), and period(.). We strongly suggest to name your identifier in **reverse-DNS** format. For example, a **System** package made by AVerMedia(avermedia.com). We suggest to use **com.avermedia.system** as the unique identifier. |
+| Icon | Required | The relative path to a PNG image. This image will be displayed to the user in the Widget List and Creator Central Widget Store both.|
+| URL | Optional | A site to provide more information about the package.|
+| Version | Required | Package's semantic version (1.0.0)|
+| Runtime | Required | The relative path to the HTML/binary file containing the package code.|
+| CreatorCentral | Required | Minimal supported Creator Central App version and SDK version  of this Package. |
 
 
 ### Widgets
@@ -89,7 +90,7 @@ Here is an example of PackageConfig.json file. Developers should modify the fiel
 | States   | Required | Each widget can have one or more states. For example, the Mute widget may have two states, mute and unmute. Ask the action to change its state by sending a changeState event. |
 | Layouts   | Optional | Specifies an array of layouts. Each widget can have one or more layouts. For example, the Clock widget can have two different layouts. One is analog and another is digital. |
 | Tooltip  | Optional | The string is displayed as a tooltip when the user leaves the mouse over your widget in the Widget List. |
-| Category | Required | The unique identifier must be contained only lowercase alphanumeric characters(a-z, 0-9), hyphen(-), and period(.). We strongly suggest to name your identifier in **reverse-DNS** format. For example, a **Lighting Toggle** widget made by AVerMedia(avermedia.com). We will use **com.avermedia.axlighting.toggle** as the unique identifier.  |
+| UUID | Required | The unique identifier must be contained only lowercase alphanumeric characters(a-z, 0-9), hyphen(-), and period(.). We strongly suggest to name your identifier in **reverse-DNS** format. For example, a **Lighting Toggle** widget made by AVerMedia(avermedia.com). We will use **com.avermedia.axlighting.toggle** as the unique identifier.  |
 | PropertyViewPath | Optional | The relative path to the Property View HTML file. If missing, the widget will have an empty Property View. |
 
 
@@ -102,10 +103,12 @@ Here is an example of PackageConfig.json file. Developers should modify the fiel
 
 ### Layouts
 
-| Member | Type     | Description                 |     |
-| ------ | -------- | --------------------------- | --- |
-| Width  | Required | The width of display view.  |     |
-| Height | Required | The height of display view. |     | 
+Creator Central supports multiple layouts defined by widgets in the package to meet functional needs. The unit of width and height is a grid on the panel. The total size of the panel is a 5 * 4 grid. This means you can use sizes from 1 * 1 to 5 * 4 to design your widgets to meet specific functional needs.
+
+| Members | Type | Description |
+| - | - | - |
+| Width  | Required | The width of display view in grid.  |
+| Height | Required | The height of display view in grid. | 
 
 ### Runtime
 
@@ -114,7 +117,7 @@ Here is an example of PackageConfig.json file. Developers should modify the fiel
 | mac / win      | Required | The name of the platform, mac or win                                   |
 | Type           | Required | The type of the package executable, web or bin                         |
 | Target         | Required | The relative path to the HTML/binary file containing the package code. |
-| MinimumVersion | Required | The minimum version of platform.                                       |
+| MinimumVersion | Required | The minimum version of platform. |
 
 ### CreatorCentral
 
