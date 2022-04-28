@@ -4,7 +4,7 @@ Registration Flow
 
 ## Package Registration
 
-When launching the Creator Central application spawns one instance of each package. The package will called as the follows:
+When launching the Creator Central application spawns one instance of each package. The package will called as the following:
 
 - for Javascript packages, its connectCreatorCentral() is called with specific parameters.
 - for compiled packages written for example in C++ or Objective-C, its main() function is called with specific parameters.
@@ -13,9 +13,9 @@ These parameters contain the port and unique identifier to use for communication
 
 ## Javascript package Registration
 
-For a Javascript plugin, you need to declare the following Javascript function:
+For a Javascript package, you need to declare the following Javascript function:
 
-```
+``` js
 function connectCreatorCentral(inPort, inPackageUUID, inRegisterEvent, inInfo)
 ```
 
@@ -23,13 +23,13 @@ This function is called when the package is loaded and should:
 
 - create the WebSocket with the port passed in parameter:
 
-```
+``` js
 websokcet = new WebSocket("ws://localhost:" + inPort);
 ```
 
-- When the WebSocket is open, the plugin needs to register with JSON data:
+- When the WebSocket is open, the package needs to register with JSON data:
 
-```
+``` js
 websocket.onopen = function()
 {
 	var json = {
@@ -43,8 +43,8 @@ websocket.onopen = function()
 
 - After performing these two steps, the package should receive the events through the function:
 
-```
-Websocket.onmessage = function(evt)
+``` js
+websocket.onmessage = function(evt)
 ```
 
 The ```inInfo``` parameter is described in the section [Info parameter](#infoparameter).
@@ -60,9 +60,10 @@ If your package is a compiled package(C++, Swift, C#, ...), the command-line too
 | -port | The string "-port" |
 | port     | The port used to create the WebSocket. | 
 | -packageUUID | The string "-packageUUID" |
-| UUID | The unique identifier string to register the package once the WebSocket is opened. |
+| packageUUID | The unique identifier string to register the package once the WebSocket is opened. |
 | -registerEvent | The string "-registerEvent" |
-| event | The event type that should be used to register the package once the WebSocket is opened. |
+| registerEvent | The event type that should be used to register the package once the WebSocket is opened. |
+| -info | The string "-info" |
 | info | A json object containing Creator Central information |
 
 The ```info``` json is described in the section [Info parameter](#infoparameter)
@@ -71,8 +72,8 @@ The ```info``` json is described in the section [Info parameter](#infoparameter)
 
 These parameters contain the port and unique identifier to use for communication with the Creator Central application. Your Javascript function would be as below:
 
-```
-Function connectCreatorCentral(inPort, inPropertyViewUUID, inInfo, inActionInfo)
+``` js
+function connectCreatorCentral(inPort, inPropertyViewUUID, inInfo, inActionInfo)
 ```
 
 | Members | Description | 
@@ -84,13 +85,14 @@ Function connectCreatorCentral(inPort, inPropertyViewUUID, inInfo, inActionInfo)
 | inWidgetInfo | A json object containing information about the widget.(see below [inWidgetInfo parameter](#widgetinfoparameter) |
 
 This function is called when property view is displayed and should:
+
 - create the WebSocket with the port passed in parameter:
-```
+``` js
 Websocket = new WebSocket("ws://localhost:" + inPort);
 ```
 
 - When the WebSocket is open, the Property View needs to be registered:
-```
+``` js
 websokcet.onopen = function()
 {
 	var json = {
@@ -103,7 +105,7 @@ websokcet.onopen = function()
 ```
 
 - After performing these two steps, the Property View should receive the events through the function:
-```
+``` js
 Websocket.onmessage = function(evt)
 ```
 
@@ -113,7 +115,7 @@ The ```inInfo``` parameter is described in the section [Info parameter](#infopar
 
 The ```info``` parameter used in the registration flow is a json object like:
 
-```
+``` json
 {
 	// Now only provide the information of the application and the OS platform.
 	"application": {
@@ -128,7 +130,7 @@ The ```info``` parameter used in the registration flow is a json object like:
 | application | Description |
 | - | - |
 | language | In which language used by Creator Central now. Possible values are ```en```, ```ja```, ```zh_TW```, ```de```, ```ko```  |
-| platform | On which platform the Creator Central is running. Possible values are ```win```and ```mac``` .
+| platform | On which platform the Creator Central is running. Possible values are ```win```and ```mac``` . |
 | platformVersion | The operation system version. |
 | version | The Creator Central application version. | 
 
@@ -141,7 +143,7 @@ var json = {
     "widget": "com.avermedia.example.widget1",
     "context": uniqueIdentifier,
     "payload": {
-        "settings"" {<json data>}
+        "settings": " {<json data>}
     }
 };
 ```
@@ -155,5 +157,5 @@ var json = {
 The payload contains:
 
 | Members | Description | 
-| -------- | -------- |
+| - | - |
 | settings | This json contains data that you can set and are stored persistently. |
