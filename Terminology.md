@@ -1,7 +1,11 @@
 Terminology
 ===
 
-![](https://i.imgur.com/Xsgwlhv.jpg)
+<br/>
+<div align="center">
+	<img src="images/00_terminology.jpg" style="zoom:80%"/>
+</div>
+<br/>
 
 
 ## Widget List
