@@ -53,7 +53,7 @@ Each widget has their own context and Creator Central will use them to identify 
 
 
 ## Property View
-Developers must follow the [Registration Flow](RegistrationFlow.md) to setup the WebSocket between Property View of Creator Central and the Package. Once the bidirectional communications are established successfully, they can use **sendToWidget** and **sendToPropertyView** to send data with each other.
+Developers must follow the [Registration Flow](RegistrationFlow.md) to setup the WebSocket between Property View of Creator Central and the Package. Once the bidirectional communications are established successfully, they can use ```sendToPackage``` and ```sendToPropertyView``` to send data with each other.
 
 When the Property View is displayed, the current settings of the selected widget are passed directly to the Property View in the **payload** parameter. The Property View can use this information to display the current settings in its UI.
 
