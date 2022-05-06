@@ -81,8 +81,8 @@ function connectCreatorCentral(inPort, inPropertyViewUUID, inRegisterEvent, inIn
 | inPort     | The port used to create the WebSocket. | 
 | inPropertyViewUUID | The unique identifier string to register the property view once the WebSocket is opened. |
 | inRegisterEvent | The event type that should be used to register the property view once the WebSocket is opened. |
-| inInfo | A json object containing Creator Central information. (See blow [Info parameter](#infoparameter) |
-| inWidgetInfo | A json object containing information about the widget.(see below [inWidgetInfo parameter](#widgetinfoparameter) |
+| inInfo | A json object containing Creator Central information. (See blow [Info parameter](#infoparameter) ) |
+| inWidgetInfo | A json object containing information about the widget.(see below [inWidgetInfo parameter](#widgetinfoparameter) ) |
 
 This function is called when property view is displayed and should:
 
@@ -143,7 +143,7 @@ var json = {
     "widget": "com.avermedia.example.widget1",
     "context": uniqueIdentifier,
     "payload": {
-        "settings": " {<json data>}
+        "settings": " {<json data>} "
     }
 };
 ```
