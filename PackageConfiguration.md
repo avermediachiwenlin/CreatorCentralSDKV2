@@ -54,7 +54,7 @@ Here is an example of PackageConfig.json file. Developers should modify the fiel
             "target": "index.html",
             "MinimumVersion": "11.0"
         }
-    },
+    ],
     "Creator Central": { 
         "MinimumVersion" : "1.1",
         "SDKVersion": 2
