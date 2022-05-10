@@ -155,7 +155,7 @@ The package will receive this event when:
 
 ``` json
 var json = {
-    "action": "com.avermedia.example.widget1",
+    "widget": "com.avermedia.example.widget1",
     "event": "widgetWillAppear", 
     "context": uniqueIdentifier,
     "payload": {
@@ -185,7 +185,7 @@ The package will receive this event when:
 
 ``` json
 var json = {
-    "action": "com.avermedia.example.widget1",
+    "widget": "com.avermedia.example.widget1",
     "event": "widgetWillDisappear", 
     "context": uniqueIdentifier,
     "payload": {
@@ -212,7 +212,7 @@ The payload object contains the following members:
 
 ``` json
 var json = {
-    "action": "com.avermedia.example.widget1",
+    "widget": "com.avermedia.example.widget1",
     "event": "propertyViewDidAppear", 
     "context": uniqueIdentifier
   }
@@ -230,7 +230,7 @@ var json = {
 
 ``` json
 var json = {
-    "action": "com.avermedia.example.widget1",
+    "widget": "com.avermedia.example.widget1",
     "event": "propertyViewDidDisappear", 
     "context": uniqueIdentifier
   }
@@ -248,7 +248,7 @@ The package will receive a ```sendToPackage``` event when the property view send
 
 ``` json
 var json = {
-    "action": "com.avermedia.example.widget1",
+    "widget": "com.avermedia.example.widget1",
     "event": "sendToPackage", 
     "context": uniqueIdentifier,
     "payload": {<json data>}
@@ -270,7 +270,7 @@ The property view will receive a **sendToPropertyView** event when the package s
 
 ``` json
 var json = {
-    "action": "com.avermedia.example.widget1",
+    "widget": "com.avermedia.example.widget1",
     "event": "sendToPropertyView", 
     "context": uniqueIdentifier,
     "payload": {<json data>}
