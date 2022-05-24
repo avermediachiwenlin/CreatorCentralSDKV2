@@ -8,58 +8,95 @@ Here is an example of PackageConfig.json file. Developers should modify the fiel
 
 ``` json 
 {
-    "Widgets": [
-        {
-            "Name": "App/File",
-            "Icon": "widgetIcon",
-            "States": [
-                {
-                    "Image": "onImage"
-                },
-                {
-                    "Image": "offImage"
-                }
-            ], 
-            "Layouts": [
-                {
-                    "width": 1,
-                    "height": 1
-                },
-                {
-                    "width": 2,
-                    "height": 1
-                }
-            ],
-            "Tooltip": "This widget can open the file or app by user selected.", 
-            "UUID": "com.avermedia.system.openapp",
-            "PropertyViewPath": "property/index.html"
-        }
-    ], 
-    
-    "Author": "AVerMedia", 
-    "Description": "This package contains many utilities that can improve work efficiency.", 
-    "Name": "System", 
-    "UUID": "com.avermedia.system",
-    "Icon": "images/packageIcon", 
-    "URL": "https://www.avermedia.com/gaming/creatorcentral", 
+    "Author": "AVerMedia",
+    "Description": "這個套件包含了兩種燈光特效的展示型態，讓使用者可依空間與所需資訊做取捨",
+    "Name": "AX Lighting EFX",
+    "UUID": "com.avermedia.package.lighting.toolbox",
+    "Icon": "images/packageAxLightingIcon",
+    "URL": "https://www.avermedia.com/gaming/creatorcentral",
     "Version": "1.0.0",
-    "Runtime": [
+    "Runtime": {
         "mac": {
-            "type": "web",
-            "target": "index.html",
+            "type": "embed",
+            "target": "AXLighting",
             "MinimumVersion": "11.0"
         },
         "win": {
-            "type": "web",
-            "target": "index.html",
+            "type": "embed",
+            "target": "AXLighting",
             "MinimumVersion": "11.0"
         }
-    ],
-    "Creator Central": { 
-        "MinimumVersion" : "1.1",
+    },
+    "CreatorCentral": {
+        "MinimumVersion": "1.1",
         "SDKVersion": 2
-    }
+    },
+    "Widgets": [
+        {
+            "Name": "開/關AX燈光特效",
+            "Icon": ":/images/toggleIcon",
+            "Tooltip": "開/關AX的燈光特效",
+            "UUID": "com.avermedia.axlighting.toggle",
+            "PropertyViewPath": "property/index1.html",
+            "States": [
+                {
+                    "Image": ":/images/fullIcon",
+                    "Title": "開"
+                },
+                {
+                    "Image": ":/images/liteIcon",
+                    "Title": "關"
+                }
+            ],
+            "Layouts": [
+                {
+                    "Title": "Full",
+                    "Icon": ":/images/fullLayoutIcon",
+                    "Width": 4,
+                    "Height": 3
+                },
+                {
+                    "Title": "Lite",
+                    "Icon": ":/images/liteLayoutIcon",
+                    "Width": 1,
+                    "Height": 2
+                }
+            ]
+        },
+        {
+            "Name": "設定AX燈光特效模式",
+            "Icon": ":/images/modeIcon",
+            "Tooltip": "切換AX的燈光特效模式",
+            "UUID": "com.avermedia.axlighting.mode",
+            "PropertyViewPath": "property/index2.html",
+            "States": [
+                {
+                    "Image": ":/images/01",
+                    "Title": "Stream"
+                },
+                {
+                    "Image": ":/images/02",
+                    "Title": "Record"
+                }
+            ],
+            "Layouts": [
+                {
+                    "Title": "Full",
+                    "Icon": ":/images/fullIcon",
+                    "Width": 2,
+                    "Height": 2
+                },
+                {
+                    "Title": "Lite",
+                    "Icon": ":/images/liteIcon",
+                    "Width": 1,
+                    "Height": 4
+                }
+            ]
+        }
+    ]
 }
+
 ```
 
 
@@ -107,6 +144,8 @@ Creator Central supports multiple layouts defined by widgets in the package to m
 
 | Members | Type | Description |
 | - | - | - |
+| Title | Required | The string will be shown on Widget List. |
+| Icon | Required | The image will be shown on Widget List. |
 | Width  | Required | The width of display view in grid.  |
 | Height | Required | The height of display view in grid. | 
 
