@@ -9,7 +9,7 @@ Here is an example of PackageConfig.json file. Developers should modify the fiel
 ``` json 
 {
     "Author": "AVerMedia",
-    "Description": "這個套件包含了兩種燈光特效的展示型態，讓使用者可依空間與所需資訊做取捨",
+    "Description": "This kit includes two display types of lighting effects, allowing users to choose according to the space and the required information.",
     "Name": "AX Lighting EFX",
     "UUID": "com.avermedia.package.lighting.toolbox",
     "Icon": "images/packageAxLightingIcon",
@@ -33,62 +33,62 @@ Here is an example of PackageConfig.json file. Developers should modify the fiel
     },
     "Widgets": [
         {
-            "Name": "開/關AX燈光特效",
+            "Name": "Turn on/off AX lighting effects.",
             "Icon": ":/images/toggleIcon",
-            "Tooltip": "開/關AX的燈光特效",
+            "Tooltip": "Turn on/off AX lighting effects.",
             "UUID": "com.avermedia.axlighting.toggle",
             "PropertyViewPath": "property/index1.html",
             "States": [
                 {
                     "Image": ":/images/fullIcon",
-                    "Title": "開"
+                    "Title": "On"
                 },
                 {
                     "Image": ":/images/liteIcon",
-                    "Title": "關"
+                    "Title": "Off"
                 }
             ],
             "Layouts": [
                 {
                     "Title": "Full",
-                    "Icon": ":/images/fullLayoutIcon",
+                    "Icon": "images/fullLayoutIcon",
                     "Width": 4,
                     "Height": 3
                 },
                 {
                     "Title": "Lite",
-                    "Icon": ":/images/liteLayoutIcon",
+                    "Icon": "images/liteLayoutIcon",
                     "Width": 1,
                     "Height": 2
                 }
             ]
         },
         {
-            "Name": "設定AX燈光特效模式",
-            "Icon": ":/images/modeIcon",
-            "Tooltip": "切換AX的燈光特效模式",
+            "Name": "Set AX Lighting Effect Mode.",
+            "Icon": "images/modeIcon",
+            "Tooltip": "Switch the lighting effect mode of AX.",
             "UUID": "com.avermedia.axlighting.mode",
             "PropertyViewPath": "property/index2.html",
             "States": [
                 {
-                    "Image": ":/images/01",
+                    "Image": "images/01",
                     "Title": "Stream"
                 },
                 {
-                    "Image": ":/images/02",
+                    "Image": "images/02",
                     "Title": "Record"
                 }
             ],
             "Layouts": [
                 {
                     "Title": "Full",
-                    "Icon": ":/images/fullIcon",
+                    "Icon": "images/fullIcon",
                     "Width": 2,
                     "Height": 2
                 },
                 {
                     "Title": "Lite",
-                    "Icon": ":/images/liteIcon",
+                    "Icon": "images/liteIcon",
                     "Width": 1,
                     "Height": 4
                 }
