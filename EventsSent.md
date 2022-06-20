@@ -28,7 +28,7 @@ The following events is additional to property view:
 
 ## setWidgetSettings
 
-The package and property view can save data persistently for the widget's instance using the setWidgetSettings event. Note that the property view will automatically receive a ```didReceiveWidgetSettings``` event with the new settings. Similarly, the package will automatically receive a ```didReceiveWidgetSettings``` event with the new settings when the property view sends this event.
+The package and property view can save data persistently for the widget's instance using the setWidgetSettings event. Note that the property view will automatically receive a [```didReceiveWidgetSettings```](/EventsReceived.md#didReceiveWidgetSettings) event with the new settings. Similarly, the package will automatically receive a ```didReceiveWidgetSettings``` event with the new settings when the property view sends this event.
 
 ``` json
 var json = {
