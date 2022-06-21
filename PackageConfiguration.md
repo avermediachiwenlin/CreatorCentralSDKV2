@@ -17,12 +17,12 @@ Here is an example of PackageConfig.json file. Developers should modify the fiel
     "Version": "1.0.0",
     "Runtime": {
         "mac": {
-            "type": "embed",
+            "type": "bin",
             "target": "AXLighting",
             "MinimumVersion": "11.0"
         },
         "win": {
-            "type": "embed",
+            "type": "bin",
             "target": "AXLighting",
             "MinimumVersion": "11.0"
         }
@@ -34,17 +34,17 @@ Here is an example of PackageConfig.json file. Developers should modify the fiel
     "Widgets": [
         {
             "Name": "Turn on/off AX lighting effects.",
-            "Icon": ":/images/toggleIcon",
+            "Icon": "images/toggleIcon",
             "Tooltip": "Turn on/off AX lighting effects.",
             "UUID": "com.avermedia.axlighting.toggle",
             "PropertyViewPath": "property/index1.html",
             "States": [
                 {
-                    "Image": ":/images/fullIcon",
+                    "Image": "images/fullIcon",
                     "Title": "On"
                 },
                 {
-                    "Image": ":/images/liteIcon",
+                    "Image": "images/liteIcon",
                     "Title": "Off"
                 }
             ],
